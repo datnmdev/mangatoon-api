@@ -1,0 +1,5 @@
+**/.DS_Store
+.vscode
+volumes
+volumes.zip
+**/firebase/*.json
