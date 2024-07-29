@@ -1,0 +1,7 @@
+export enum RoutingKey {
+    CHAPTER_CREATE = 'chapter.create',
+    USER_SIGNUP_CREATE = 'user.signup.create',
+    USER_SIGNIN_SAVE_TOKEN = 'user.signIn.saveToken',
+    USER_SIGNOUT_DELETE_TOKEN = 'user.signOut.deleteToken',
+    USER_REFRESH_TOKEN = 'user.refreshToken'
+}
