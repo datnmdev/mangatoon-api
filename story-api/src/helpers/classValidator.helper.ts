@@ -1,7 +1,5 @@
 import { ValidationArguments, ValidationOptions, ValidatorConstraint, ValidatorConstraintInterface, registerDecorator } from 'class-validator'
 
-import { StoryPriceHistoryService } from '../api/storyPriceHistory/storyPriceHistory.service'
-
 export function IsInteger(validationOptions?: ValidationOptions) {
     @ValidatorConstraint({ async: true })
     class IsNumberContraint implements ValidatorConstraintInterface {
@@ -128,38 +126,6 @@ export function IsFutureDate(validationOptions?: ValidationOptions) {
     return function (object: Object, propertyName: string) {
         registerDecorator({
             name: 'isFutureDate',
-            target: object.constructor,
-            propertyName: propertyName,
-            constraints: [],
-            options: validationOptions,
-            validator: IsNumberContraint
-        })
-    }
-}
-
-export function IsExistedPriceStoryStartTime(validationOptions?: ValidationOptions) {
-    @ValidatorConstraint({ async: true })
-    class IsNumberContraint implements ValidatorConstraintInterface {
-        async validate(value: any, args: ValidationArguments) {
-            if (value instanceof Date || value instanceof String || !isNaN(Date.parse(value))) {
-                const startTime = new Date(value instanceof Date ? value : Date.parse(value))
-                const storyPriceHistories = await StoryPriceHistoryService.findStoryPriceHistoryByStartTime(startTime)
-                if (storyPriceHistories.count > 0) {
-                        return false
-                }
-                return true
-            }
-            return false
-        }
-
-        defaultMessage(validationArguments?: ValidationArguments | undefined): string {
-            return 'Text ($value) is existed!';
-        }
-    }
-
-    return function (object: Object, propertyName: string) {
-        registerDecorator({
-            name: 'isExistedPriceStoryStartTime',
             target: object.constructor,
             propertyName: propertyName,
             constraints: [],

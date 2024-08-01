@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="12" failures="0" errors="0" time="4.681">
+  <testsuite name="Kiểm thử API tạo thông tin chương mới cho bộ truyện" errors="0" failures="0" skipped="0" timestamp="2024-07-31T18:59:50" time="1.044" tests="2">
+    <testcase classname="Kiểm thử API tạo thông tin chương mới cho bộ truyện Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" name="Kiểm thử API tạo thông tin chương mới cho bộ truyện Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" time="0.015">
+    </testcase>
+    <testcase classname="Kiểm thử API tạo thông tin chương mới cho bộ truyện Access token khả dụng, có quyền admin, thông tin body hợp lệ" name="Kiểm thử API tạo thông tin chương mới cho bộ truyện Access token khả dụng, có quyền admin, thông tin body hợp lệ" time="0.098">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API tạo nội dung của chương" errors="0" failures="0" skipped="0" timestamp="2024-07-31T18:59:51" time="2.467" tests="2">
+    <testcase classname="Kiểm thử API tạo nội dung của chương Access token hết hạn hoặc không hợp lệ, thông tin form-data hợp lệ" name="Kiểm thử API tạo nội dung của chương Access token hết hạn hoặc không hợp lệ, thông tin form-data hợp lệ" time="0.006">
+    </testcase>
+    <testcase classname="Kiểm thử API tạo nội dung của chương Access token khả dụng, có quyền admin, thông tin form-data hợp lệ" name="Kiểm thử API tạo nội dung của chương Access token khả dụng, có quyền admin, thông tin form-data hợp lệ" time="2.438">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API tạo thông tin của bộ truyện" errors="0" failures="0" skipped="0" timestamp="2024-07-31T18:59:53" time="0.819" tests="2">
+    <testcase classname="Kiểm thử API tạo thông tin của bộ truyện Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" name="Kiểm thử API tạo thông tin của bộ truyện Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" time="0.005">
+    </testcase>
+    <testcase classname="Kiểm thử API tạo thông tin của bộ truyện Access token khả dụng, có quyền admin, thông tin body hợp lệ" name="Kiểm thử API tạo thông tin của bộ truyện Access token khả dụng, có quyền admin, thông tin body hợp lệ" time="0.775">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API cập nhật lại thông tin của chương" errors="0" failures="0" skipped="0" timestamp="2024-07-31T18:59:54" time="0.133" tests="2">
+    <testcase classname="Kiểm thử API cập nhật lại thông tin của chương Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" name="Kiểm thử API cập nhật lại thông tin của chương Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" time="0.004">
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật lại thông tin của chương Access token khả dụng, có quyền admin, thông tin body hợp lệ" name="Kiểm thử API cập nhật lại thông tin của chương Access token khả dụng, có quyền admin, thông tin body hợp lệ" time="0.092">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API cập nhật thông tin của bộ truyện" errors="0" failures="0" skipped="0" timestamp="2024-07-31T18:59:54" time="0.094" tests="2">
+    <testcase classname="Kiểm thử API cập nhật thông tin của bộ truyện Access token hết hạn hoặc không hợp lệ, thông tin form-data hợp lệ" name="Kiểm thử API cập nhật thông tin của bộ truyện Access token hết hạn hoặc không hợp lệ, thông tin form-data hợp lệ" time="0.004">
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật thông tin của bộ truyện Access token khả dụng, có quyền admin, thông tin form-data hợp lệ" name="Kiểm thử API cập nhật thông tin của bộ truyện Access token khả dụng, có quyền admin, thông tin form-data hợp lệ" time="0.067">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API cập nhật nội dung của chương" errors="0" failures="0" skipped="0" timestamp="2024-07-31T18:59:54" time="0.085" tests="2">
+    <testcase classname="Kiểm thử API cập nhật nội dung của chương Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" name="Kiểm thử API cập nhật nội dung của chương Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" time="0.002">
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật nội dung của chương Access token khả dụng, có quyền admin, thông tin body hợp lệ" name="Kiểm thử API cập nhật nội dung của chương Access token khả dụng, có quyền admin, thông tin body hợp lệ" time="0.064">
+    </testcase>
+  </testsuite>
+</testsuites>

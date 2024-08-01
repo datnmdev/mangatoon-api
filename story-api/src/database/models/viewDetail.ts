@@ -34,11 +34,6 @@ export class viewDetail extends Model<viewDetailAttributes, viewDetailCreationAt
       allowNull: false,
       primaryKey: true
     },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.NOW
-    },
     chapterId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -46,6 +41,11 @@ export class viewDetail extends Model<viewDetailAttributes, viewDetailCreationAt
         model: 'chapter',
         key: 'id'
       }
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW
     },
     clientId: {
       type: DataTypes.STRING(250),

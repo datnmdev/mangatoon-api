@@ -47,6 +47,12 @@ describe('Kiểm thử API tạo bình luận', () => {
             }
         })
 
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 2000)
+        })
+
         expect(response.status).toBe(200)
         expect(response.data).toEqual({
             data: {

@@ -7,7 +7,6 @@ import { CountryRouter } from '../api/country/country.route'
 import { GenreRouter } from '../api/genre/genre.route'
 import { StoryRouter } from '../api/story/story.route'
 import { StoryGenreDetailRouter } from '../api/storyGenreDetail/storyGenreDetail.route'
-import { StoryPriceHistoryRouter } from '../api/storyPriceHistory/storyPriceHistory.route'
 import { StoryFollowDetailRouter } from '../api/storyFollowDetail/storyFollowDetail.route'
 import { StoryRatingDetailRouter } from '../api/storyRatingDetail/storyRatingDetail.route'
 import { ChapterRouter } from '../api/chapter/chapter.route'
@@ -25,7 +24,6 @@ AppRouter.use('/country', CountryRouter)
 AppRouter.use('/genre', GenreRouter)
 AppRouter.use('/story', StoryRouter)
 AppRouter.use('/storyGenreDetail', StoryGenreDetailRouter)
-AppRouter.use('/storyPriceHistory', StoryPriceHistoryRouter)
 AppRouter.use('/storyFollowDetail', StoryFollowDetailRouter)
 AppRouter.use('/storyRatingDetail', StoryRatingDetailRouter)
 AppRouter.use('/chapter', ChapterRouter)

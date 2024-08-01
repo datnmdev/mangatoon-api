@@ -22,10 +22,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - story_uploads:/story-api/uploads
-      - ./volumes/story_uploads:/story-api/uploads
-      - ./story-api/src:/story-api/src
+    # volumes:
+    #   - ./story-api/src:/story-api/src
     depends_on:
       - story-db
       - story-redis
@@ -45,23 +43,17 @@ services:
     ports:
       - "33061:3306"
     volumes:
-      - story_db:/var/lib/mysql
-      - ./volumes/story_db:/var/lib/mysql
+      # - ./volumes/story_db:/var/lib/mysql
+      - storydbdata:/var/lib/mysql
     networks:
       - mangatoon-network
 
   story-redis:
     container_name: story-redis
-    image: bitnami/redis:latest
+    image: redis:latest
     restart: always
     ports:
       - "16379:6379"
-    environment:
-      - REDIS_PASSWORD=12345678
-      - REDIS_PORT_NUMBER=6379
-    volumes:
-      - story_redis_data:/bitnami/redis/data
-      - ./volumes/story_redis_data:/bitnami/redis/data
     networks:
       - mangatoon-network
   
@@ -73,8 +65,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
-    volumes:
-      - ./comment-api/src:/comment-api/src
+    # volumes:
+    #   - ./comment-api/src:/comment-api/src
     depends_on:
       - comment-db
       - comment-redis
@@ -94,23 +86,17 @@ services:
     ports:
       - "13307:3306"
     volumes:
-      - comment_db:/var/lib/mysql
-      - ./volumes/comment_db:/var/lib/mysql
+      # - ./volumes/comment_db:/var/lib/mysql
+      - commentdbdata:/var/lib/mysql
     networks:
       - mangatoon-network
 
   comment-redis:
     container_name: comment-redis
-    image: bitnami/redis:latest
+    image: redis:latest
     restart: always
     ports:
       - "16380:6379"
-    environment:
-      - REDIS_PASSWORD=12345678
-      - REDIS_PORT_NUMBER=6379
-    volumes:
-      - comment_redis_data:/bitnami/redis/data
-      - ./volumes/comment_redis_data:/bitnami/redis/data
     networks:
       - mangatoon-network
 
@@ -122,10 +108,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3002:3002"
-    volumes:
-      - user_uploads:/user-api/uploads
-      - ./volumes/user_uploads:/user-api/uploads
-      - ./user-api/src:/user-api/src
+    # volumes:
+    #   - ./user-api/src:/user-api/src
     depends_on:
       - user-db
       - user-redis
@@ -145,23 +129,17 @@ services:
     ports:
       - "13308:3306"
     volumes:
-      - user_db:/var/lib/mysql
-      - ./volumes/user_db:/var/lib/mysql
+      # - ./volumes/user_db:/var/lib/mysql
+      - userdbdata:/var/lib/mysql
     networks:
       - mangatoon-network
 
   user-redis:
     container_name: user-redis
-    image: bitnami/redis:latest
+    image: redis:latest
     restart: always
     ports:
       - "16381:6379"
-    environment:
-      - REDIS_PASSWORD=12345678
-      - REDIS_PORT_NUMBER=6379
-    volumes:
-      - user_redis_data:/bitnami/redis/data
-      - ./volumes/user_redis_data:/bitnami/redis/data
     networks:
       - mangatoon-network
 
@@ -174,26 +152,14 @@ services:
       RABBITMQ_DEFAULT_USER: datnmptit
       RABBITMQ_DEFAULT_PASS: 12345678
     ports:
-      - "15672:5672"
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-      - rabbitmq_log:/var/log/rabbitmq
-      - ./volumes/rabbitmq/rabbitmq_data:/var/lib/rabbitmq
-      - ./volumes/rabbitmq/rabbitmq_log:/var/log/rabbitmq
+      - "15673:5672"
     networks:
       - mangatoon-network
-    
-volumes:
-  story_uploads:
-  story_db:
-  story_redis_data:
-  comment_db:
-  comment_redis_data:
-  user_uploads:
-  user_db:
-  user_redis_data:
-  rabbitmq_data:
-  rabbitmq_log:
 
+volumes:
+  userdbdata:
+  storydbdata:
+  commentdbdata:
+    
 networks:
   mangatoon-network:

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="0.93">
+  <testsuite name="Kiểm thử API chỉnh sửa bình luận" errors="0" failures="0" skipped="0" timestamp="2024-07-31T19:00:02" time="0.791" tests="2">
+    <testcase classname="Kiểm thử API chỉnh sửa bình luận Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" name="Kiểm thử API chỉnh sửa bình luận Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" time="0.04">
+    </testcase>
+    <testcase classname="Kiểm thử API chỉnh sửa bình luận Access token khả dụng, thông tin body hợp lệ" name="Kiểm thử API chỉnh sửa bình luận Access token khả dụng, thông tin body hợp lệ" time="0.087">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API tạo bình luận" errors="0" failures="0" skipped="0" timestamp="2024-07-31T19:00:03" time="0.094" tests="2">
+    <testcase classname="Kiểm thử API tạo bình luận Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" name="Kiểm thử API tạo bình luận Access token hết hạn hoặc không hợp lệ, thông tin body hợp lệ" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API tạo bình luận Access token khả dụng, thông tin body hợp lệ" name="Kiểm thử API tạo bình luận Access token khả dụng, thông tin body hợp lệ" time="0.069">
+    </testcase>
+  </testsuite>
+</testsuites>

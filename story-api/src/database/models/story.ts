@@ -5,11 +5,9 @@ import type { author, authorId } from './author';
 import type { chapter, chapterId } from './chapter';
 import type { country, countryId } from './country';
 import type { genre, genreId } from './genre';
-import type { invoice, invoiceId } from './invoice';
 import type { storyAuthorDetail, storyAuthorDetailId } from './storyAuthorDetail';
 import type { storyFollowDetail, storyFollowDetailId } from './storyFollowDetail';
 import type { storyGenreDetail, storyGenreDetailId } from './storyGenreDetail';
-import type { storyPriceHistory, storyPriceHistoryId } from './storyPriceHistory';
 import type { storyRatingDetail, storyRatingDetailId } from './storyRatingDetail';
 import type { user, userId } from './user';
 
@@ -92,18 +90,6 @@ export class story extends Model<storyAttributes, storyCreationAttributes> imple
   hasGenreId_genre!: Sequelize.BelongsToManyHasAssociationMixin<genre, genreId>;
   hasGenreId_genres!: Sequelize.BelongsToManyHasAssociationsMixin<genre, genreId>;
   countGenreId_genres!: Sequelize.BelongsToManyCountAssociationsMixin;
-  // story hasMany invoice via storyId
-  invoices!: invoice[];
-  getInvoices!: Sequelize.HasManyGetAssociationsMixin<invoice>;
-  setInvoices!: Sequelize.HasManySetAssociationsMixin<invoice, invoiceId>;
-  addInvoice!: Sequelize.HasManyAddAssociationMixin<invoice, invoiceId>;
-  addInvoices!: Sequelize.HasManyAddAssociationsMixin<invoice, invoiceId>;
-  createInvoice!: Sequelize.HasManyCreateAssociationMixin<invoice>;
-  removeInvoice!: Sequelize.HasManyRemoveAssociationMixin<invoice, invoiceId>;
-  removeInvoices!: Sequelize.HasManyRemoveAssociationsMixin<invoice, invoiceId>;
-  hasInvoice!: Sequelize.HasManyHasAssociationMixin<invoice, invoiceId>;
-  hasInvoices!: Sequelize.HasManyHasAssociationsMixin<invoice, invoiceId>;
-  countInvoices!: Sequelize.HasManyCountAssociationsMixin;
   // story hasMany storyAuthorDetail via storyId
   storyAuthorDetails!: storyAuthorDetail[];
   getStoryAuthorDetails!: Sequelize.HasManyGetAssociationsMixin<storyAuthorDetail>;
@@ -140,18 +126,6 @@ export class story extends Model<storyAttributes, storyCreationAttributes> imple
   hasStoryGenreDetail!: Sequelize.HasManyHasAssociationMixin<storyGenreDetail, storyGenreDetailId>;
   hasStoryGenreDetails!: Sequelize.HasManyHasAssociationsMixin<storyGenreDetail, storyGenreDetailId>;
   countStoryGenreDetails!: Sequelize.HasManyCountAssociationsMixin;
-  // story hasMany storyPriceHistory via storyId
-  storyPriceHistories!: storyPriceHistory[];
-  getStoryPriceHistories!: Sequelize.HasManyGetAssociationsMixin<storyPriceHistory>;
-  setStoryPriceHistories!: Sequelize.HasManySetAssociationsMixin<storyPriceHistory, storyPriceHistoryId>;
-  addStoryPriceHistory!: Sequelize.HasManyAddAssociationMixin<storyPriceHistory, storyPriceHistoryId>;
-  addStoryPriceHistories!: Sequelize.HasManyAddAssociationsMixin<storyPriceHistory, storyPriceHistoryId>;
-  createStoryPriceHistory!: Sequelize.HasManyCreateAssociationMixin<storyPriceHistory>;
-  removeStoryPriceHistory!: Sequelize.HasManyRemoveAssociationMixin<storyPriceHistory, storyPriceHistoryId>;
-  removeStoryPriceHistories!: Sequelize.HasManyRemoveAssociationsMixin<storyPriceHistory, storyPriceHistoryId>;
-  hasStoryPriceHistory!: Sequelize.HasManyHasAssociationMixin<storyPriceHistory, storyPriceHistoryId>;
-  hasStoryPriceHistories!: Sequelize.HasManyHasAssociationsMixin<storyPriceHistory, storyPriceHistoryId>;
-  countStoryPriceHistories!: Sequelize.HasManyCountAssociationsMixin;
   // story hasMany storyRatingDetail via storyId
   storyRatingDetails!: storyRatingDetail[];
   getStoryRatingDetails!: Sequelize.HasManyGetAssociationsMixin<storyRatingDetail>;
@@ -176,18 +150,6 @@ export class story extends Model<storyAttributes, storyCreationAttributes> imple
   hasUserId_user!: Sequelize.BelongsToManyHasAssociationMixin<user, userId>;
   hasUserId_users!: Sequelize.BelongsToManyHasAssociationsMixin<user, userId>;
   countUserId_users!: Sequelize.BelongsToManyCountAssociationsMixin;
-  // story belongsToMany user via storyId and userId
-  userId_user_storyFollowDetails!: user[];
-  getUserId_user_storyFollowDetails!: Sequelize.BelongsToManyGetAssociationsMixin<user>;
-  setUserId_user_storyFollowDetails!: Sequelize.BelongsToManySetAssociationsMixin<user, userId>;
-  addUserId_user_storyFollowDetail!: Sequelize.BelongsToManyAddAssociationMixin<user, userId>;
-  addUserId_user_storyFollowDetails!: Sequelize.BelongsToManyAddAssociationsMixin<user, userId>;
-  createUserId_user_storyFollowDetail!: Sequelize.BelongsToManyCreateAssociationMixin<user>;
-  removeUserId_user_storyFollowDetail!: Sequelize.BelongsToManyRemoveAssociationMixin<user, userId>;
-  removeUserId_user_storyFollowDetails!: Sequelize.BelongsToManyRemoveAssociationsMixin<user, userId>;
-  hasUserId_user_storyFollowDetail!: Sequelize.BelongsToManyHasAssociationMixin<user, userId>;
-  hasUserId_user_storyFollowDetails!: Sequelize.BelongsToManyHasAssociationsMixin<user, userId>;
-  countUserId_user_storyFollowDetails!: Sequelize.BelongsToManyCountAssociationsMixin;
   // story belongsToMany user via storyId and userId
   userId_user_storyRatingDetails!: user[];
   getUserId_user_storyRatingDetails!: Sequelize.BelongsToManyGetAssociationsMixin<user>;
@@ -247,7 +209,7 @@ export class story extends Model<storyAttributes, storyCreationAttributes> imple
   }, {
     sequelize,
     tableName: 'story',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "PRIMARY",

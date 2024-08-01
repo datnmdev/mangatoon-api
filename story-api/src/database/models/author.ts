@@ -18,17 +18,17 @@ export class author extends Model<authorAttributes, authorCreationAttributes> im
   name!: string;
 
   // author belongsToMany story via authorId and storyId
-  storyId_story_storyAuthorDetails!: story[];
-  getStoryId_story_storyAuthorDetails!: Sequelize.BelongsToManyGetAssociationsMixin<story>;
-  setStoryId_story_storyAuthorDetails!: Sequelize.BelongsToManySetAssociationsMixin<story, storyId>;
-  addStoryId_story_storyAuthorDetail!: Sequelize.BelongsToManyAddAssociationMixin<story, storyId>;
-  addStoryId_story_storyAuthorDetails!: Sequelize.BelongsToManyAddAssociationsMixin<story, storyId>;
-  createStoryId_story_storyAuthorDetail!: Sequelize.BelongsToManyCreateAssociationMixin<story>;
-  removeStoryId_story_storyAuthorDetail!: Sequelize.BelongsToManyRemoveAssociationMixin<story, storyId>;
-  removeStoryId_story_storyAuthorDetails!: Sequelize.BelongsToManyRemoveAssociationsMixin<story, storyId>;
-  hasStoryId_story_storyAuthorDetail!: Sequelize.BelongsToManyHasAssociationMixin<story, storyId>;
-  hasStoryId_story_storyAuthorDetails!: Sequelize.BelongsToManyHasAssociationsMixin<story, storyId>;
-  countStoryId_story_storyAuthorDetails!: Sequelize.BelongsToManyCountAssociationsMixin;
+  storyId_stories!: story[];
+  getStoryId_stories!: Sequelize.BelongsToManyGetAssociationsMixin<story>;
+  setStoryId_stories!: Sequelize.BelongsToManySetAssociationsMixin<story, storyId>;
+  addStoryId_story!: Sequelize.BelongsToManyAddAssociationMixin<story, storyId>;
+  addStoryId_stories!: Sequelize.BelongsToManyAddAssociationsMixin<story, storyId>;
+  createStoryId_story!: Sequelize.BelongsToManyCreateAssociationMixin<story>;
+  removeStoryId_story!: Sequelize.BelongsToManyRemoveAssociationMixin<story, storyId>;
+  removeStoryId_stories!: Sequelize.BelongsToManyRemoveAssociationsMixin<story, storyId>;
+  hasStoryId_story!: Sequelize.BelongsToManyHasAssociationMixin<story, storyId>;
+  hasStoryId_stories!: Sequelize.BelongsToManyHasAssociationsMixin<story, storyId>;
+  countStoryId_stories!: Sequelize.BelongsToManyCountAssociationsMixin;
   // author hasMany storyAuthorDetail via authorId
   storyAuthorDetails!: storyAuthorDetail[];
   getStoryAuthorDetails!: Sequelize.HasManyGetAssociationsMixin<storyAuthorDetail>;
@@ -65,6 +65,13 @@ export class author extends Model<authorAttributes, authorCreationAttributes> im
         using: "BTREE",
         fields: [
           { name: "id" },
+        ]
+      },
+      {
+        name: "FTS_name_author",
+        type: "FULLTEXT",
+        fields: [
+          { name: "name" },
         ]
       },
     ]

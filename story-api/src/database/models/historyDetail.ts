@@ -40,11 +40,6 @@ export class historyDetail extends Model<historyDetailAttributes, historyDetailC
       allowNull: false,
       primaryKey: true
     },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.NOW
-    },
     chapterId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -52,6 +47,11 @@ export class historyDetail extends Model<historyDetailAttributes, historyDetailC
         model: 'chapter',
         key: 'id'
       }
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW
     },
     userId: {
       type: DataTypes.INTEGER,

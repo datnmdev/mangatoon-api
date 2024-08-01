@@ -73,6 +73,13 @@ export class genre extends Model<genreAttributes, genreCreationAttributes> imple
           { name: "id" },
         ]
       },
+      {
+        name: "FTS_name_genre",
+        type: "FULLTEXT",
+        fields: [
+          { name: "name" },
+        ]
+      },
     ]
   });
   }

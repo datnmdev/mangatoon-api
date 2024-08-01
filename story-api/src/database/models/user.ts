@@ -1,8 +1,6 @@
 import * as Sequelize from 'sequelize';
 import { DataTypes, Model, Optional } from 'sequelize';
 import type { historyDetail, historyDetailId } from './historyDetail';
-import type { invoice, invoiceId } from './invoice';
-import type { servicePackageTransaction, servicePackageTransactionId } from './servicePackageTransaction';
 import type { story, storyId } from './story';
 import type { storyFollowDetail, storyFollowDetailId } from './storyFollowDetail';
 import type { storyRatingDetail, storyRatingDetailId } from './storyRatingDetail';
@@ -30,42 +28,6 @@ export class user extends Model<userAttributes, userCreationAttributes> implemen
   hasHistoryDetail!: Sequelize.HasManyHasAssociationMixin<historyDetail, historyDetailId>;
   hasHistoryDetails!: Sequelize.HasManyHasAssociationsMixin<historyDetail, historyDetailId>;
   countHistoryDetails!: Sequelize.HasManyCountAssociationsMixin;
-  // user hasMany invoice via userId
-  invoices!: invoice[];
-  getInvoices!: Sequelize.HasManyGetAssociationsMixin<invoice>;
-  setInvoices!: Sequelize.HasManySetAssociationsMixin<invoice, invoiceId>;
-  addInvoice!: Sequelize.HasManyAddAssociationMixin<invoice, invoiceId>;
-  addInvoices!: Sequelize.HasManyAddAssociationsMixin<invoice, invoiceId>;
-  createInvoice!: Sequelize.HasManyCreateAssociationMixin<invoice>;
-  removeInvoice!: Sequelize.HasManyRemoveAssociationMixin<invoice, invoiceId>;
-  removeInvoices!: Sequelize.HasManyRemoveAssociationsMixin<invoice, invoiceId>;
-  hasInvoice!: Sequelize.HasManyHasAssociationMixin<invoice, invoiceId>;
-  hasInvoices!: Sequelize.HasManyHasAssociationsMixin<invoice, invoiceId>;
-  countInvoices!: Sequelize.HasManyCountAssociationsMixin;
-  // user hasMany servicePackageTransaction via userId
-  servicePackageTransactions!: servicePackageTransaction[];
-  getServicePackageTransactions!: Sequelize.HasManyGetAssociationsMixin<servicePackageTransaction>;
-  setServicePackageTransactions!: Sequelize.HasManySetAssociationsMixin<servicePackageTransaction, servicePackageTransactionId>;
-  addServicePackageTransaction!: Sequelize.HasManyAddAssociationMixin<servicePackageTransaction, servicePackageTransactionId>;
-  addServicePackageTransactions!: Sequelize.HasManyAddAssociationsMixin<servicePackageTransaction, servicePackageTransactionId>;
-  createServicePackageTransaction!: Sequelize.HasManyCreateAssociationMixin<servicePackageTransaction>;
-  removeServicePackageTransaction!: Sequelize.HasManyRemoveAssociationMixin<servicePackageTransaction, servicePackageTransactionId>;
-  removeServicePackageTransactions!: Sequelize.HasManyRemoveAssociationsMixin<servicePackageTransaction, servicePackageTransactionId>;
-  hasServicePackageTransaction!: Sequelize.HasManyHasAssociationMixin<servicePackageTransaction, servicePackageTransactionId>;
-  hasServicePackageTransactions!: Sequelize.HasManyHasAssociationsMixin<servicePackageTransaction, servicePackageTransactionId>;
-  countServicePackageTransactions!: Sequelize.HasManyCountAssociationsMixin;
-  // user belongsToMany story via userId and storyId
-  storyId_stories!: story[];
-  getStoryId_stories!: Sequelize.BelongsToManyGetAssociationsMixin<story>;
-  setStoryId_stories!: Sequelize.BelongsToManySetAssociationsMixin<story, storyId>;
-  addStoryId_story!: Sequelize.BelongsToManyAddAssociationMixin<story, storyId>;
-  addStoryId_stories!: Sequelize.BelongsToManyAddAssociationsMixin<story, storyId>;
-  createStoryId_story!: Sequelize.BelongsToManyCreateAssociationMixin<story>;
-  removeStoryId_story!: Sequelize.BelongsToManyRemoveAssociationMixin<story, storyId>;
-  removeStoryId_stories!: Sequelize.BelongsToManyRemoveAssociationsMixin<story, storyId>;
-  hasStoryId_story!: Sequelize.BelongsToManyHasAssociationMixin<story, storyId>;
-  hasStoryId_stories!: Sequelize.BelongsToManyHasAssociationsMixin<story, storyId>;
-  countStoryId_stories!: Sequelize.BelongsToManyCountAssociationsMixin;
   // user belongsToMany story via userId and storyId
   storyId_story_storyFollowDetails!: story[];
   getStoryId_story_storyFollowDetails!: Sequelize.BelongsToManyGetAssociationsMixin<story>;

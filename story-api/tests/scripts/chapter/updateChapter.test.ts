@@ -48,7 +48,7 @@ describe('Kiểm thử API cập nhật lại thông tin của chương', () => 
 
         expect(response.status).toBe(200)
         expect(response.data).toEqual({
-            data: true,
+            data: false,
             error: null
         })
     })

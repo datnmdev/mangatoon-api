@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="76" failures="38" errors="0" time="4.009">
+  <testsuite name="Kiểm thử API cập nhật lại mật khẩu đã quên" errors="0" failures="4" skipped="0" timestamp="2024-08-01T07:05:03" time="0.148" tests="4">
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu email" name="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu email" time="0.021">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/resetPassword.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu password" name="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu password" time="0.002">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/resetPassword.test.js:25:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu code" name="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu code" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/resetPassword.test.js:40:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Sai mã code, cập nhật lại mật khẩu không thành công" name="Kiểm thử API cập nhật lại mật khẩu đã quên Sai mã code, cập nhật lại mật khẩu không thành công" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/resetPassword.test.js:55:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API cập nhật lại mật khẩu đã quên" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:03" time="1.05" tests="4">
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu email" name="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu email" time="0.026">
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu password" name="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu password" time="0.005">
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu code" name="Kiểm thử API cập nhật lại mật khẩu đã quên Thiếu code" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API cập nhật lại mật khẩu đã quên Sai mã code, cập nhật lại mật khẩu không thành công" name="Kiểm thử API cập nhật lại mật khẩu đã quên Sai mã code, cập nhật lại mật khẩu không thành công" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đăng nhập bằng email và password" errors="0" failures="7" skipped="0" timestamp="2024-08-01T07:05:04" time="0.048" tests="7">
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email hoặc password không đúng" name="Kiểm thử API đăng nhập bằng email và password Test Email hoặc password không đúng" time="0.007">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signInWithEmailPassword.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã được kích hoạt" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã được kích hoạt" time="0.004">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signInWithEmailPassword.test.js:24:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản chưa được kích hoạt" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản chưa được kích hoạt" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signInWithEmailPassword.test.js:48:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signInWithEmailPassword.test.js:69:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signInWithEmailPassword.test.js:90:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Thiếu email" name="Kiểm thử API đăng nhập bằng email và password Test Thiếu email" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signInWithEmailPassword.test.js:111:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Thiếu password" name="Kiểm thử API đăng nhập bằng email và password Test Thiếu password" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signInWithEmailPassword.test.js:125:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đăng nhập bằng email và password" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:04" time="0.432" tests="7">
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email hoặc password không đúng" name="Kiểm thử API đăng nhập bằng email và password Test Email hoặc password không đúng" time="0.045">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã được kích hoạt" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã được kích hoạt" time="0.075">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản chưa được kích hoạt" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản chưa được kích hoạt" time="0.064">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" time="0.06">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" name="Kiểm thử API đăng nhập bằng email và password Test Email và password chính xác, tài khoản đã bị khoá" time="0.07">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Thiếu email" name="Kiểm thử API đăng nhập bằng email và password Test Thiếu email" time="0.005">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng nhập bằng email và password Test Thiếu password" name="Kiểm thử API đăng nhập bằng email và password Test Thiếu password" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đăng ký bằng email và password" errors="0" failures="4" skipped="0" timestamp="2024-08-01T07:05:04" time="0.051" tests="4">
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Thiếu email" name="Kiểm thử API đăng ký bằng email và password Thiếu email" time="0.009">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signUpWithEmailPassword.test.js:11:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Thiếu password" name="Kiểm thử API đăng ký bằng email và password Thiếu password" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signUpWithEmailPassword.test.js:28:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Dữ liệu đầu vào hợp lệ" name="Kiểm thử API đăng ký bằng email và password Dữ liệu đầu vào hợp lệ" time="0.002">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signUpWithEmailPassword.test.js:45:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Email đã được đăng ký" name="Kiểm thử API đăng ký bằng email và password Email đã được đăng ký" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signUpWithEmailPassword.test.js:66:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đăng ký bằng email và password" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:04" time="0.297" tests="4">
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Thiếu email" name="Kiểm thử API đăng ký bằng email và password Thiếu email" time="0.004">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Thiếu password" name="Kiểm thử API đăng ký bằng email và password Thiếu password" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Dữ liệu đầu vào hợp lệ" name="Kiểm thử API đăng ký bằng email và password Dữ liệu đầu vào hợp lệ" time="0.097">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng ký bằng email và password Email đã được đăng ký" name="Kiểm thử API đăng ký bằng email và password Email đã được đăng ký" time="0.08">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đăng xuất tài khoản" errors="0" failures="3" skipped="0" timestamp="2024-08-01T07:05:05" time="0.036" tests="3">
+    <testcase classname="Kiểm thử API đăng xuất tài khoản Thiếu accessToken" name="Kiểm thử API đăng xuất tài khoản Thiếu accessToken" time="0.009">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signOut.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng xuất tài khoản Thiếu refreshToken" name="Kiểm thử API đăng xuất tài khoản Thiếu refreshToken" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signOut.test.js:24:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đăng xuất tài khoản Dữ liệu đầu vào hợp lệ" name="Kiểm thử API đăng xuất tài khoản Dữ liệu đầu vào hợp lệ" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/signOut.test.js:38:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API refreshToken" errors="0" failures="3" skipped="0" timestamp="2024-08-01T07:05:05" time="0.071" tests="3">
+    <testcase classname="Kiểm thử API refreshToken Thiếu accessToken" name="Kiểm thử API refreshToken Thiếu accessToken" time="0.028">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/refreshToken.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API refreshToken Thiếu refreshToken" name="Kiểm thử API refreshToken Thiếu refreshToken" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/refreshToken.test.js:24:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API refreshToken Dữ liệu đầu vào hợp lệ" name="Kiểm thử API refreshToken Dữ liệu đầu vào hợp lệ" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/auth/refreshToken.test.js:38:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đăng xuất tài khoản" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:05" time="0.115" tests="3">
+    <testcase classname="Kiểm thử API đăng xuất tài khoản Thiếu accessToken" name="Kiểm thử API đăng xuất tài khoản Thiếu accessToken" time="0.005">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng xuất tài khoản Thiếu refreshToken" name="Kiểm thử API đăng xuất tài khoản Thiếu refreshToken" time="0.004">
+    </testcase>
+    <testcase classname="Kiểm thử API đăng xuất tài khoản Dữ liệu đầu vào hợp lệ" name="Kiểm thử API đăng xuất tài khoản Dữ liệu đầu vào hợp lệ" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đổi mật khẩu" errors="0" failures="2" skipped="0" timestamp="2024-08-01T07:05:05" time="0.057" tests="2">
+    <testcase classname="Kiểm thử API đổi mật khẩu Access token đã hết hạn, dữ liệu đầu vào đầy đủ" name="Kiểm thử API đổi mật khẩu Access token đã hết hạn, dữ liệu đầu vào đầy đủ" time="0.023">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/changePassword.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API đổi mật khẩu Access token khả dụng, dữ liệu đầu vào đầy đủ" name="Kiểm thử API đổi mật khẩu Access token khả dụng, dữ liệu đầu vào đầy đủ" time="0.009">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/changePassword.test.js:29:23)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API refreshToken" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:05" time="0.119" tests="3">
+    <testcase classname="Kiểm thử API refreshToken Thiếu accessToken" name="Kiểm thử API refreshToken Thiếu accessToken" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API refreshToken Thiếu refreshToken" name="Kiểm thử API refreshToken Thiếu refreshToken" time="0.002">
+    </testcase>
+    <testcase classname="Kiểm thử API refreshToken Dữ liệu đầu vào hợp lệ" name="Kiểm thử API refreshToken Dữ liệu đầu vào hợp lệ" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API xác thực mã quên mật khẩu" errors="0" failures="3" skipped="0" timestamp="2024-08-01T07:05:05" time="0.029" tests="3">
+    <testcase classname="Kiểm thử API xác thực mã quên mật khẩu Thiếu email" name="Kiểm thử API xác thực mã quên mật khẩu Thiếu email" time="0.009">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/verifyCodeToResetPassword.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API xác thực mã quên mật khẩu Thiếu otpCode" name="Kiểm thử API xác thực mã quên mật khẩu Thiếu otpCode" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/verifyCodeToResetPassword.test.js:24:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API xác thực mã quên mật khẩu Sai mã, xác thực không thành công" name="Kiểm thử API xác thực mã quên mật khẩu Sai mã, xác thực không thành công" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/verifyCodeToResetPassword.test.js:38:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API đổi mật khẩu" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:05" time="0.401" tests="2">
+    <testcase classname="Kiểm thử API đổi mật khẩu Access token đã hết hạn, dữ liệu đầu vào đầy đủ" name="Kiểm thử API đổi mật khẩu Access token đã hết hạn, dữ liệu đầu vào đầy đủ" time="0.008">
+    </testcase>
+    <testcase classname="Kiểm thử API đổi mật khẩu Access token khả dụng, dữ liệu đầu vào đầy đủ" name="Kiểm thử API đổi mật khẩu Access token khả dụng, dữ liệu đầu vào đầy đủ" time="0.293">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API kích hoạt tài khoản" errors="0" failures="3" skipped="0" timestamp="2024-08-01T07:05:05" time="0.042" tests="3">
+    <testcase classname="Kiểm thử API kích hoạt tài khoản Thiếu id" name="Kiểm thử API kích hoạt tài khoản Thiếu id" time="0.008">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/account/verifyAccount.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API kích hoạt tài khoản Thiếu otpCode" name="Kiểm thử API kích hoạt tài khoản Thiếu otpCode" time="0.002">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/account/verifyAccount.test.js:24:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API kích hoạt tài khoản Dữ liệu đầu vào hợp lệ" name="Kiểm thử API kích hoạt tài khoản Dữ liệu đầu vào hợp lệ" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/account/verifyAccount.test.js:38:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API lấy thông tin tài khoản" errors="0" failures="2" skipped="0" timestamp="2024-08-01T07:05:05" time="0.033" tests="2">
+    <testcase classname="Kiểm thử API lấy thông tin tài khoản Không có authorization header" name="Kiểm thử API lấy thông tin tài khoản Không có authorization header" time="0.007">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/account/getAccount.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API lấy thông tin tài khoản Có Authorization, nhưng access token đã hết hạn hoặc không hợp lệ" name="Kiểm thử API lấy thông tin tài khoản Có Authorization, nhưng access token đã hết hạn hoặc không hợp lệ" time="0.004">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/account/getAccount.test.js:22:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API xác thực mã quên mật khẩu" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:05" time="0.113" tests="3">
+    <testcase classname="Kiểm thử API xác thực mã quên mật khẩu Thiếu email" name="Kiểm thử API xác thực mã quên mật khẩu Thiếu email" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API xác thực mã quên mật khẩu Thiếu otpCode" name="Kiểm thử API xác thực mã quên mật khẩu Thiếu otpCode" time="0.001">
+    </testcase>
+    <testcase classname="Kiểm thử API xác thực mã quên mật khẩu Sai mã, xác thực không thành công" name="Kiểm thử API xác thực mã quên mật khẩu Sai mã, xác thực không thành công" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API kích hoạt tài khoản" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:06" time="0.112" tests="3">
+    <testcase classname="Kiểm thử API kích hoạt tài khoản Thiếu id" name="Kiểm thử API kích hoạt tài khoản Thiếu id" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API kích hoạt tài khoản Thiếu otpCode" name="Kiểm thử API kích hoạt tài khoản Thiếu otpCode" time="0.002">
+    </testcase>
+    <testcase classname="Kiểm thử API kích hoạt tài khoản Dữ liệu đầu vào hợp lệ" name="Kiểm thử API kích hoạt tài khoản Dữ liệu đầu vào hợp lệ" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API lấy thông tin tài khoản" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:06" time="0.11" tests="2">
+    <testcase classname="Kiểm thử API lấy thông tin tài khoản Không có authorization header" name="Kiểm thử API lấy thông tin tài khoản Không có authorization header" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API lấy thông tin tài khoản Có Authorization, nhưng access token đã hết hạn hoặc không hợp lệ" name="Kiểm thử API lấy thông tin tài khoản Có Authorization, nhưng access token đã hết hạn hoặc không hợp lệ" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API lấy thông tin cá nhân" errors="0" failures="1" skipped="0" timestamp="2024-08-01T07:05:06" time="0.029" tests="1">
+    <testcase classname="Kiểm thử API lấy thông tin cá nhân Access token khả dụng, dữ liệu đầu vào đầy đủ" name="Kiểm thử API lấy thông tin cá nhân Access token khả dụng, dữ liệu đầu vào đầy đủ" time="0.008">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/user/getProfile.test.js:10:23)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API gửi mã xác thực quên mật khẩu" errors="0" failures="2" skipped="0" timestamp="2024-08-01T07:05:06" time="0.036" tests="2">
+    <testcase classname="Kiểm thử API gửi mã xác thực quên mật khẩu Thiếu email" name="Kiểm thử API gửi mã xác thực quên mật khẩu Thiếu email" time="0.007">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/sendVerifyingEmailCodeToResetPassword.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API gửi mã xác thực quên mật khẩu Gửi mã thành công" name="Kiểm thử API gửi mã xác thực quên mật khẩu Gửi mã thành công" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/sendVerifyingEmailCodeToResetPassword.test.js:22:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API gửi mã kích hoạt tài khoản" errors="0" failures="2" skipped="0" timestamp="2024-08-01T07:05:06" time="0.03" tests="2">
+    <testcase classname="Kiểm thử API gửi mã kích hoạt tài khoản Thiếu id" name="Kiểm thử API gửi mã kích hoạt tài khoản Thiếu id" time="0.009">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/otp/sendVerifyingAccountCode.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API gửi mã kích hoạt tài khoản Có id nhưng tài khoản đã được kích hoạt trước đó" name="Kiểm thử API gửi mã kích hoạt tài khoản Có id nhưng tài khoản đã được kích hoạt trước đó" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/otp/sendVerifyingAccountCode.test.js:22:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API kiểm tra sự tồn tại của email" errors="0" failures="2" skipped="0" timestamp="2024-08-01T07:05:06" time="0.03" tests="2">
+    <testcase classname="Kiểm thử API kiểm tra sự tồn tại của email Thiếu email" name="Kiểm thử API kiểm tra sự tồn tại của email Thiếu email" time="0.007">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/checkEmail.test.js:10:26)</failure>
+    </testcase>
+    <testcase classname="Kiểm thử API kiểm tra sự tồn tại của email Email đã tồn tại" name="Kiểm thử API kiểm tra sự tồn tại của email Email đã tồn tại" time="0.001">
+      <failure>AggregateError
+    at Function.Object.&lt;anonymous&gt;.AxiosError.from (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/AxiosError.js:89:14)
+    at RedirectableRequest.handleRequestError (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/adapters/http.js:610:25)
+    at RedirectableRequest.emit (node:events:519:28)
+    at RedirectableRequest.emit (node:domain:488:12)
+    at ClientRequest.eventHandlers.&lt;computed&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/follow-redirects/index.js:38:24)
+    at ClientRequest.emit (node:events:519:28)
+    at ClientRequest.emit (node:domain:488:12)
+    at Socket.socketErrorListener (node:_http_client:492:9)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:488:12)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/node_modules/axios/lib/core/Axios.js:45:41)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.&lt;anonymous&gt; (/Users/nguyenminhdat/Documents/mangatoon/Bản sao mangatoon-api/user-api/build/tests/scripts/emailPasswordCredential/checkEmail.test.js:22:26)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API lấy thông tin cá nhân" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:06" time="0.192" tests="1">
+    <testcase classname="Kiểm thử API lấy thông tin cá nhân Access token khả dụng, dữ liệu đầu vào đầy đủ" name="Kiểm thử API lấy thông tin cá nhân Access token khả dụng, dữ liệu đầu vào đầy đủ" time="0.092">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API gửi mã xác thực quên mật khẩu" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:06" time="0.118" tests="2">
+    <testcase classname="Kiểm thử API gửi mã xác thực quên mật khẩu Thiếu email" name="Kiểm thử API gửi mã xác thực quên mật khẩu Thiếu email" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API gửi mã xác thực quên mật khẩu Gửi mã thành công" name="Kiểm thử API gửi mã xác thực quên mật khẩu Gửi mã thành công" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API gửi mã kích hoạt tài khoản" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:06" time="0.105" tests="2">
+    <testcase classname="Kiểm thử API gửi mã kích hoạt tài khoản Thiếu id" name="Kiểm thử API gửi mã kích hoạt tài khoản Thiếu id" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API gửi mã kích hoạt tài khoản Có id nhưng tài khoản đã được kích hoạt trước đó" name="Kiểm thử API gửi mã kích hoạt tài khoản Có id nhưng tài khoản đã được kích hoạt trước đó" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Kiểm thử API kiểm tra sự tồn tại của email" errors="0" failures="0" skipped="0" timestamp="2024-08-01T07:05:06" time="0.11" tests="2">
+    <testcase classname="Kiểm thử API kiểm tra sự tồn tại của email Thiếu email" name="Kiểm thử API kiểm tra sự tồn tại của email Thiếu email" time="0.003">
+    </testcase>
+    <testcase classname="Kiểm thử API kiểm tra sự tồn tại của email Email đã tồn tại" name="Kiểm thử API kiểm tra sự tồn tại của email Email đã tồn tại" time="0.003">
+    </testcase>
+  </testsuite>
+</testsuites>

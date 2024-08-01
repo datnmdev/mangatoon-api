@@ -11,9 +11,7 @@ export function defineAbilityFor(user: Payload) {
                 break
 
             default:
-                can('read', 'chapterImage', {
-                    isAccessed: true
-                })
+                can('read', 'chapterImage')
         }
     })
 }

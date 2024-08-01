@@ -27,6 +27,8 @@ export class ChapterController {
             await transaction.commit()
             return res.send(new AppResponse({ ...chapter.dataValues, id: chapter.id }, null))
         } catch (error) {
+            console.log(error);
+            
             await transaction.rollback()
             return next(error)
         }

@@ -13,8 +13,8 @@ const connect = async () => {
         console.log('Workers is working...')
     } catch (error) {
         setTimeout(connect, 1000)
-        console.log(`AMQP Error::::${ error }`)
+        console.log(`AMQP Error::::${error}`)
     }
-} 
+}
 
 connect()

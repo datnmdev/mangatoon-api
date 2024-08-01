@@ -40,7 +40,7 @@ describe('Kiểm thử API tạo thông tin chương mới cho bộ truyện', (
         const body = {
             order: 1,
             name: "Chap 1",
-            storyId: 1719
+            storyId: 1718
         }
 
         const response = await axios.post(url, body, {
@@ -58,7 +58,7 @@ describe('Kiểm thử API tạo thông tin chương mới cho bộ truyện', (
                 id: expect.any(Number),
                 order: 1,
                 name: "Chap 1",
-                storyId: 1719
+                storyId: 1718
             },
             error: null
         })

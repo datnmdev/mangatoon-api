@@ -8,10 +8,6 @@ export interface aliasAttributes {
   storyId: number;
 }
 
-export interface CustomAliasAttr extends aliasAttributes {
-  story: story
-}
-
 export type aliasPk = "id";
 export type aliasId = alias[aliasPk];
 export type aliasOptionalAttributes = "id";

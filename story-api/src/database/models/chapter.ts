@@ -113,7 +113,7 @@ export class chapter extends Model<chapterAttributes, chapterCreationAttributes>
   }, {
     sequelize,
     tableName: 'chapter',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
@@ -128,6 +128,13 @@ export class chapter extends Model<chapterAttributes, chapterCreationAttributes>
         using: "BTREE",
         fields: [
           { name: "storyId" },
+        ]
+      },
+      {
+        name: "FTS_name_chapter",
+        type: "FULLTEXT",
+        fields: [
+          { name: "name" },
         ]
       },
     ]

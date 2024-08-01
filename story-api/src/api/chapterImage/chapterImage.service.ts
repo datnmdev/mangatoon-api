@@ -49,32 +49,4 @@ export class ChapterImagesService {
         })
     }
 
-    static getMostRecentServicePackageTransactionOfUser = async (userId: number) => {
-        const rs = await Models.servicePackageTransaction.findAll({
-            include: [
-                {
-                    model: Models.servicePackage,
-                    as: 'servicePackage'
-                }
-            ],
-            where: {
-                userId
-            },
-            order: [
-                ['createdAt', 'DESC']
-            ],
-            limit: 1
-        })
-        return rs.length > 0 ? rs[0] : null
-    }
-
-    static getInvoice = (userId: number, storyId: number) => {
-        return Models.invoice.findOne({
-            where: {
-                userId,
-                storyId
-            }
-        })
-    }
-
 }
