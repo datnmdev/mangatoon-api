@@ -14,7 +14,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Thực hiện clone dự án từ github về workspace khi một sự kiện xảy ra (push event)
-                git 'https://github.com/datptithcm/mangatoon-deployment.git'
+                git 'https://github.com/datptithcm/mangatoon-api.git'
             }
         }
 
@@ -63,22 +63,21 @@ pipeline {
         stage('Testing') {
             steps {
                 sshagent(['ssh-remote']) {
-                    // Ngưng lại và xoá tất cả các container đã chạy trước đó
+                   // Ngưng lại và xoá tất cả các container đã chạy trước đó
                     sh """
                     ssh -o StrictHostKeyChecking=no ${REMOTE_SERVER_USERNAME}@${REMOTE_SERVER_HOST} '
-                    CONTAINERS=\$(docker ps -q)
-                    if [ -n "\$CONTAINERS" ]; then
-                        docker stop \$CONTAINERS
-                        docker rm -f \$(docker ps -q -a)
+                    cd /root/mangatoon-api
+                    if docker compose -f compose.yaml ps -q | grep -q .; then
+                        docker compose -f compose.yaml down
                     else
-                        echo "No running containers to stop."
+                        echo "No containers running from compose.yaml"
                     fi'
                     """
 
                     // Xoá các images đã được build trước đó
                     sh """
                     ssh -o StrictHostKeyChecking=no ${REMOTE_SERVER_USERNAME}@${REMOTE_SERVER_HOST} '
-                    IMAGES=\$(docker images -q)
+                    IMAGES=\$(docker images -q "mangatoon-api-*")
                     if [ -n "\$IMAGES" ]; then
                         docker rmi -f \$IMAGES
                     else
@@ -139,19 +138,18 @@ pipeline {
                     // Ngưng lại và xoá tất cả các container đã chạy trước đó
                     sh """
                     ssh -o StrictHostKeyChecking=no ${REMOTE_SERVER_USERNAME}@${REMOTE_SERVER_HOST} '
-                    CONTAINERS=\$(docker ps -q)
-                    if [ -n "\$CONTAINERS" ]; then
-                        docker stop \$CONTAINERS
-                        docker rm -f \$(docker ps -q -a)
+                    cd /root/mangatoon-api
+                    if docker compose -f compose.yaml ps -q | grep -q .; then
+                        docker compose -f compose.yaml down
                     else
-                        echo "No running containers to stop."
+                        echo "No containers running from compose.yaml"
                     fi'
                     """
 
                     // Xoá các images đã được build trước đó
                     sh """
                     ssh -o StrictHostKeyChecking=no ${REMOTE_SERVER_USERNAME}@${REMOTE_SERVER_HOST} '
-                    IMAGES=\$(docker images -q)
+                    IMAGES=\$(docker images -q "mangatoon-api-*")
                     if [ -n "\$IMAGES" ]; then
                         docker rmi -f \$IMAGES
                     else
