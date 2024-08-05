@@ -43,6 +43,12 @@ describe('Kiểm thử API tạo thông tin chương mới cho bộ truyện', (
             storyId: 1718
         }
 
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 2000)
+        })
+
         const response = await axios.post(url, body, {
             headers: {
                 Authorization: `Bearer ${login.data.data.tokens.accessToken}`

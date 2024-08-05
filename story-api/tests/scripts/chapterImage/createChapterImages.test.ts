@@ -44,6 +44,12 @@ describe('Kiểm thử API tạo nội dung của chương', () => {
         formData.append('chapterImages', fs.createReadStream(`${process.cwd()}/tests/data/images/1.jpeg`))
         formData.append('chapterImages', fs.createReadStream(`${process.cwd()}/tests/data/images/2.png`))
 
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 2000)
+        })
+
         const response = await axios.post(url, formData, {
             headers: {
                 ...formData.getHeaders(),

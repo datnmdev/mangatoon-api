@@ -44,6 +44,13 @@ describe('Kiểm thử API tạo thông tin của bộ truyện', () => {
         formData.append('description', '...')
         formData.append('countryId', '78')
         formData.append('coverImage', fs.createReadStream(`${process.cwd()}/tests/data/images/1.jpeg`))
+
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 2000)
+        })
+
         const response = await axios.post(url, formData, {
             headers: {
                 ...formData.getHeaders(),

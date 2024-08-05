@@ -39,6 +39,12 @@ describe('Kiểm thử API cập nhật nội dung của chương', () => {
             order: 2
         }
 
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 2000)
+        })
+
         const response = await axios.post(url, body, {
             headers: {
                 Authorization: `Bearer ${login.data.data.tokens.accessToken}`

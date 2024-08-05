@@ -39,6 +39,12 @@ describe('Kiểm thử API cập nhật thông tin của bộ truyện', () => {
         const formData = new FormData()
         formData.append('title', 'ONE PIECE')
 
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 2000)
+        })
+
         const response = await axios.post(url, formData, {
             headers: {
                 ...formData.getHeaders(),
