@@ -7,7 +7,6 @@ export class CreateCommentRequestDTO {
     @IsNotEmpty()
     @IsString()
     @MinLength(1)
-    @MaxLength(9999)
     content: string
 
     @Expose()

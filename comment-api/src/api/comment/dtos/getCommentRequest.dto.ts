@@ -9,6 +9,12 @@ export class GetCommentRequestDTO {
     @Transform(transformToInt)
     @IsOptional()
     @IsInt()
+    id: number
+
+    @Expose()
+    @Transform(transformToInt)
+    @IsOptional()
+    @IsInt()
     chapterId: number
 
     @Expose()

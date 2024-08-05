@@ -1,5 +1,5 @@
 import { Exclude, Expose, Transform } from 'class-transformer'
-import { IsInt, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator'
+import { IsInt, IsNotEmpty, IsOptional, IsString, Max, Min, MinLength } from 'class-validator'
 
 import { transformToInt } from '../../../helpers/classTransformer.helper'
 
@@ -9,8 +9,14 @@ export class UpdateCommentRequestBodyDTO {
     @IsOptional()
     @IsString()
     @MinLength(1)
-    @MaxLength(9999)
     content: string
+
+    @Expose()
+    @IsOptional()
+    @IsInt()
+    @Min(0)
+    @Max(1)
+    status: string
 
     @Expose()
     userId: number

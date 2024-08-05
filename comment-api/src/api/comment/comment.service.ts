@@ -14,7 +14,10 @@ export class CommentService {
     }
 
     static updateComment = (id: number, commentData: UpdateCommentRequestBodyDTO)=> {
-        return Models.comment.update(plainToClass(Object, commentData, {
+        return Models.comment.update(plainToClass(Object, {
+            ...commentData,
+            updatedAt: new Date()
+        }, {
             exposeUnsetFields: false
         }), {
             where: {

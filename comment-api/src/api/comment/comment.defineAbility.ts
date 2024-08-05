@@ -18,6 +18,9 @@ export function defineAbilityFor(user: Payload) {
                 can('update', 'comment', {
                     userId: user.userId
                 })
+                can('delete', 'comment', {
+                    userId: user.userId
+                })
         }
     })
 }
