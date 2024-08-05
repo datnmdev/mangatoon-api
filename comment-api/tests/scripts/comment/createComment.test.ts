@@ -41,16 +41,16 @@ describe('Kiểm thử API tạo bình luận', () => {
             chapterId: 1
         }
 
-        const response = await axios.post(url, body, {
-            headers: {
-                Authorization: `Bearer ${login.data.data.tokens.accessToken}`
-            }
-        })
-
         await new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(true)
             }, 2000)
+        })
+
+        const response = await axios.post(url, body, {
+            headers: {
+                Authorization: `Bearer ${login.data.data.tokens.accessToken}`
+            }
         })
 
         expect(response.status).toBe(200)

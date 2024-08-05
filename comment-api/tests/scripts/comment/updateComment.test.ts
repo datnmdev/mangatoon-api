@@ -39,6 +39,12 @@ describe('Kiểm thử API chỉnh sửa bình luận', () => {
             content: "Hello anh em!"
         }
 
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(true)
+            }, 2000)
+        })
+
         const response = await axios.put(url, body, {
             headers: {
                 Authorization: `Bearer ${login.data.data.tokens.accessToken}`
