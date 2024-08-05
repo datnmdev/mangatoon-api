@@ -1,7 +1,7 @@
 import { Exclude, Expose, Transform } from 'class-transformer'
-import { IsInt, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator'
+import { IsDate, IsInt, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator'
 
-import { transformToInt } from '../../../helpers/classTransformer.helper'
+import { transformToDate, transformToInt } from '../../../helpers/classTransformer.helper'
 
 @Exclude()
 export class UpdateStoryRequestBodyDTO {
@@ -28,7 +28,10 @@ export class UpdateStoryRequestBodyDTO {
     status: number
 
     @Expose()
-    @Transform(transformToInt)
+    updatedAt: Date
+
+    @Expose()
+    @Transform(transformToInt)  
     @IsOptional()
     @IsInt()
     countryId: number
