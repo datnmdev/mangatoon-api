@@ -11,6 +11,9 @@ import { ChapterPublisher } from '../../amqp/publisher/ChapterPublisher.class'
 import { sequelize } from '../../database/mysql.config'
 import { CreateChapterReqFromAmqpDTO } from '../../amqp/dtos/createChapterReqFromAmqp.dto'
 import { SearchChapterReqDTO } from './dtos/searchChapterRequest.dto'
+import { StoryService } from '../story/story.service'
+import { UpdateStoryRequestBodyDTO } from '../story/dtos/updateStoryRequest.dto'
+import { handler } from '../../helpers/error.helper'
 
 export class ChapterController {
 
@@ -24,11 +27,16 @@ export class ChapterController {
                 id: chapter.id,
                 storyId: chapter.dataValues.storyId
             } as CreateChapterReqFromAmqpDTO))
+            handler(async () => {
+                console.log(createChapterRequestData.storyId);
+                
+                await StoryService.updateStory(createChapterRequestData.storyId, plainToClass(UpdateStoryRequestBodyDTO, {
+                    updatedAt: new Date()
+                }))
+            })
             await transaction.commit()
             return res.send(new AppResponse({ ...chapter.dataValues, id: chapter.id }, null))
         } catch (error) {
-            console.log(error);
-            
             await transaction.rollback()
             return next(error)
         }
