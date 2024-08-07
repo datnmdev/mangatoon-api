@@ -15,6 +15,7 @@ import axios from 'axios'
 import { CreateChapterImageDTO } from './dtos/createChapterImage.dto'
 import { getStorage } from 'firebase-admin/storage'
 import { DeleteChapterImageByChapterIdReqDTO } from './dtos/deleteChapterImageByChapterIdReq.dto'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
 
 export class ChapterImageController {
 
@@ -98,36 +99,20 @@ export class ChapterImageController {
             const chapterImages = await ChapterImagesService.getChapterImagesByChapterId(getChapterImagesByChapterIdRequestData.chapterId)
             const data = []
             for (let chapterImage of chapterImages) {
-                if (chapterImage.dataValues.path.startsWith('http')) {
-                    data.push(chapterImage.dataValues)
-                } else {
-                    data.push({
-                        ...chapterImage.dataValues,
-                        path: (await getStorage().bucket().file(chapterImage.dataValues.path).getSignedUrl({
-                            action: 'read',
-                            expires: Date.now() + 5 * 60 * 1000
-                        }))[0]
+                data.push({
+                    ...chapterImage.dataValues,
+                    path: generateSignedUrl({
+                        url: chapterImage.dataValues.path.startsWith('http')
+                            ? chapterImage.dataValues.path
+                            : (await getStorage().bucket().file(chapterImage.dataValues.path).getSignedUrl({
+                                action: 'read',
+                                expires: Date.now() + 5 * 60 * 1000
+                            }))[0],
+                        expireAt: Date.now() + 5 * 60 * 1000
                     })
-                }
+                })
             }
             return res.send(new AppResponse(data, null))
-        } catch (error) {
-            return next(error)
-        }
-    }
-
-    static getImage = async (req: Request, res: Response, next: NextFunction) => {
-        try {
-            const getImageRequestData = plainToClass(GetImageRequestDTO, req.body)
-            const response = await axios.get(getImageRequestData.path, {
-                headers: {
-                    Referer: 'https://truyenqqviet.com/'
-                },
-                responseType: 'stream'
-            })
-
-            res.setHeader('Content-Type', response.headers['content-type'])
-            return response.data.pipe(res)
         } catch (error) {
             return next(error)
         }
@@ -147,8 +132,6 @@ export class ChapterImageController {
 
             return res.send(new AppResponse(false, null))
         } catch (error) {
-            console.log(error);
-            
             return next(error)
         }
     }

@@ -8,6 +8,8 @@ import { TransformerGroup } from './dtos/enums/group.enum'
 import { GetViewOfChapterRequestParamDTO, GetViewOfChapterRequestQueryDTO } from './dtos/getViewOfChapterRequest.dto'
 import { GetTopStoriesByViewCountRequestDTO } from './dtos/getTopStoriesByViewCountRequest.dto'
 import { GetViewOfStoryRequestDTO } from './dtos/getViewOfStoryRequest.dto'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
+import { getStorage } from 'firebase-admin/storage'
 
 export class ViewDetailController {
 
@@ -50,7 +52,23 @@ export class ViewDetailController {
                     TransformerGroup.EXCLUDE
                 ]
             })
-            const data = await ViewDetailService.getTopStoriesByViewCount(getTopStoriesByViewCountRequestData)
+            const rows = await ViewDetailService.getTopStoriesByViewCount(getTopStoriesByViewCountRequestData)
+            const data = []
+            for (let row of (rows as any[])) {
+                data.push({
+                    ...row,
+                    coverImageUrl: generateSignedUrl({
+                        url: row.coverImageUrl.startsWith('http')
+                            ? row.coverImageUrl
+                            : (await getStorage().bucket().file(row.coverImageUrl).getSignedUrl({
+                                action: 'read',
+                                expires: Date.now() + 5 * 60 * 1000
+                            }))[0],
+                        expireAt: Date.now() + 5 * 60 * 1000
+                    })
+                })
+            }
+
             return res.send(new AppResponse(data, null))
         } catch (error) {
             return next(error)

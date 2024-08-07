@@ -9,6 +9,8 @@ import { GetStoryFollowDetailRequestDTO } from './dtos/getStoryFollowDetailReque
 import { GetFollowCountOfStoryRequestDTO } from './dtos/getFollowCountOfStoryRequest.dto'
 import { GetTopStoriesByFollowCountRequestDTO } from './dtos/getTopStoriesByFollowCountRequest.dto'
 import { TransformGroup } from './dtos/enums/group.enum'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
+import { getStorage } from 'firebase-admin/storage'
 
 export class StoryFollowDetailController {
 
@@ -49,7 +51,29 @@ export class StoryFollowDetailController {
                 ]
             })
             const storyFollowDetails = await StoryFollowDetailService.getStoryFollowDetail(getStoryFollowDetailRequestData)
-            return res.send(new AppResponse(storyFollowDetails, null))
+            const rows = []
+            for (let row of storyFollowDetails.rows) {
+                rows.push({
+                    userId: row.dataValues.userId,
+                    story: {
+                        ...(row.dataValues as any).story.dataValues,
+                        coverImageUrl: generateSignedUrl({
+                            url: (row.dataValues as any).story.dataValues.coverImageUrl.startsWith('http')
+                                ? (row.dataValues as any).story.dataValues.coverImageUrl
+                                : (await getStorage().bucket().file((row.dataValues as any).story.dataValues.coverImageUrl).getSignedUrl({
+                                    action: 'read',
+                                    expires: Date.now() + 5 * 60 * 1000
+                                }))[0],
+                            expireAt: Date.now() + 5 * 60 * 1000
+                        })
+                    }
+                })
+            }
+
+            return res.send(new AppResponse({
+                count: storyFollowDetails.count,
+                rows
+            }, null))
         } catch (error) {
             return next(error)
         }
@@ -68,7 +92,23 @@ export class StoryFollowDetailController {
     static getTopStoriesByFollowCount = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const getTopStoriesByFollowCountRequestData = plainToClass(GetTopStoriesByFollowCountRequestDTO, req.query)
-            const data = await StoryFollowDetailService.getTopStoriesByFollowCount(getTopStoriesByFollowCountRequestData)
+            const rows = await StoryFollowDetailService.getTopStoriesByFollowCount(getTopStoriesByFollowCountRequestData)
+            const data = []
+            for (let row of (rows as any[])) {
+                data.push({
+                    ...row,
+                    coverImageUrl: generateSignedUrl({
+                        url: row.coverImageUrl.startsWith('http')
+                            ? row.coverImageUrl
+                            : (await getStorage().bucket().file(row.coverImageUrl).getSignedUrl({
+                                action: 'read',
+                                expires: Date.now() + 5 * 60 * 1000
+                            }))[0],
+                        expireAt: Date.now() + 5 * 60 * 1000
+                    })
+                })
+            }
+
             return res.send(new AppResponse(data, null))
         } catch (error) {
             return next(error)

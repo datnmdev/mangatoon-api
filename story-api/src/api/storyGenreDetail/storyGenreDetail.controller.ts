@@ -6,6 +6,8 @@ import { StoryGenreDetailService } from './storyGenreDetail.service'
 import { AppResponse } from '../../helpers/response.helper'
 import { DeleteStoryGenreDetailRequestDTO } from './dtos/deleteStoryGenreDetailRequest.dto'
 import { GetStoryGenreDetailRequestDTO } from './dtos/getStoryGenreDetail.dto'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
+import { getStorage } from 'firebase-admin/storage'
 
 export class StoryGenreDetailController {
 
@@ -36,7 +38,29 @@ export class StoryGenreDetailController {
         try {
             const getStoryGenreDetailRequestData = plainToClass(GetStoryGenreDetailRequestDTO, req.query)
             const storyGenreDetails = await StoryGenreDetailService.getStoryGenreDetail(getStoryGenreDetailRequestData)
-            return res.send(new AppResponse(storyGenreDetails, null))
+            const rows = []
+            for (let row of storyGenreDetails.rows) {
+                rows.push({
+                    genre: (row.dataValues as any).genre.dataValues,
+                    story: {
+                        ...(row.dataValues as any).story.dataValues,
+                        coverImageUrl: generateSignedUrl({
+                            url: (row.dataValues as any).story.dataValues.coverImageUrl.startsWith('http')
+                                ? (row.dataValues as any).story.dataValues.coverImageUrl
+                                : (await getStorage().bucket().file((row.dataValues as any).story.dataValues.coverImageUrl).getSignedUrl({
+                                    action: 'read',
+                                    expires: Date.now() + 5 * 60 * 1000
+                                }))[0],
+                            expireAt: Date.now() + 5 * 60 * 1000
+                        })
+                    }
+                })
+            }
+
+            return res.send(new AppResponse({
+                count: storyGenreDetails.count,
+                rows
+            }, null))
         } catch (error) {
             console.log(error);
             return next(error)

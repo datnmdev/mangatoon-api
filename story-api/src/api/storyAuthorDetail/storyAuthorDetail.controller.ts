@@ -6,6 +6,8 @@ import { CreateStoryAuthorDetailRequestDTO } from './dtos/createStoryAuthorDetai
 import { AppResponse } from '../../helpers/response.helper'
 import { DeleteStoryAuthorDetailRequestDTO } from './dtos/deleteStoryAuthorDetailRequest.dto'
 import { GetStoryAuthorDetailRequestDTO } from './dtos/GetStoryAuthorDetailRequest.dto'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
+import { getStorage } from 'firebase-admin/storage'
 
 export class StoryAuthorDetailController {
     
@@ -36,7 +38,29 @@ export class StoryAuthorDetailController {
         try {
             const getStoryAuthorDetailRequestData = plainToClass(GetStoryAuthorDetailRequestDTO, req.query)
             const storyAuthorDetails = await StoryAuthorDetailService.getStoryAuthorDetail(getStoryAuthorDetailRequestData)
-            return res.send(new AppResponse(storyAuthorDetails, null))
+            const rows = []
+            for (let row of storyAuthorDetails.rows) {
+                rows.push({
+                    author: (row.dataValues as any).author.dataValues,
+                    story: {
+                        ...(row.dataValues as any).story.dataValues,
+                        coverImageUrl: generateSignedUrl({
+                            url: (row.dataValues as any).story.dataValues.coverImageUrl.startsWith('http')
+                                ? (row.dataValues as any).story.dataValues.coverImageUrl
+                                : (await getStorage().bucket().file((row.dataValues as any).story.dataValues.coverImageUrl).getSignedUrl({
+                                    action: 'read',
+                                    expires: Date.now() + 5 * 60 * 1000
+                                }))[0],
+                            expireAt: Date.now() + 5 * 60 * 1000
+                        })
+                    }
+                })
+            }
+
+            return res.send(new AppResponse({
+                count: storyAuthorDetails.count,
+                rows
+            }, null))
         } catch (error) {
             return next(error)
         }

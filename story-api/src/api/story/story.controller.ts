@@ -117,17 +117,18 @@ export class StoryController {
             const stories = await StoryService.getStories(getStoriesRequestData)
             const rows = []
             for (let row of stories.rows) {
-                if (row.dataValues.coverImageUrl.startsWith('http')) {
-                    rows.push(row.dataValues)
-                } else {
-                    rows.push({
-                        ...row.dataValues,
-                        coverImageUrl: (await getStorage().bucket().file(row.dataValues.coverImageUrl).getSignedUrl({
-                            action: 'read',
-                            expires: Date.now() + 5 * 60 * 1000
-                        }))[0]
+                rows.push({
+                    ...row.dataValues,
+                    coverImageUrl: generateSignedUrl({
+                        url: row.dataValues.coverImageUrl.startsWith('http')
+                            ? row.dataValues.coverImageUrl
+                            : (await getStorage().bucket().file(row.dataValues.coverImageUrl).getSignedUrl({
+                                action: 'read',
+                                expires: Date.now() + 5 * 60 * 1000
+                            }))[0],
+                        expireAt: Date.now() + 5 * 60 * 1000
                     })
-                }
+                })
             }
             return res.send(new AppResponse({
                 count: stories.count,

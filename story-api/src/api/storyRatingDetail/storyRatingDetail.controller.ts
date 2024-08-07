@@ -8,6 +8,8 @@ import { UpdateStoryRatingDetailRequestDTO } from './dtos/updateStoryRatingDetai
 import { GetStoryRatingDetailRequestDTO } from './dtos/getStoryRatingDetailRequest.dto'
 import { GetTopStoriesByRatingRequestDTO } from './dtos/getTopStoriesByRatingRequest.dto'
 import { GetRatingOfStoryRequestDTO } from './dtos/getRatingOfStoryRequest.dto'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
+import { getStorage } from 'firebase-admin/storage'
 
 export class StoryRatingDetailController {
 
@@ -53,7 +55,23 @@ export class StoryRatingDetailController {
     static getTopStoriesByRating = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const getTopStoriesByRatingRequestData = plainToClass(GetTopStoriesByRatingRequestDTO, req.query)
-            const data = await StoryRatingDetailService.getTopStoriesByRating(getTopStoriesByRatingRequestData)
+            const rows = await StoryRatingDetailService.getTopStoriesByRating(getTopStoriesByRatingRequestData)
+            const data = []
+            for (let row of (rows as any[])) {
+                data.push({
+                    ...row,
+                    coverImageUrl: generateSignedUrl({
+                        url: row.coverImageUrl.startsWith('http')
+                            ? row.coverImageUrl
+                            : (await getStorage().bucket().file(row.coverImageUrl).getSignedUrl({
+                                action: 'read',
+                                expires: Date.now() + 5 * 60 * 1000
+                            }))[0],
+                        expireAt: Date.now() + 5 * 60 * 1000
+                    })
+                })
+            }
+
             return res.send(new AppResponse(data, null))
         } catch (error) {
             return next(error)
