@@ -10,6 +10,7 @@ import { GetTopChartDataReqDTO } from './dtos/getTopChartDataReq.dto'
 import moment from 'moment'
 import { generateSignedUrl } from '../../helpers/signingUrl.helper'
 import { getStorage } from 'firebase-admin/storage'
+import { getMillisecondsToRoundedTime } from '../../helpers/time.helper'
 
 export class StoryService {
 
@@ -106,7 +107,7 @@ export class StoryService {
         const topThreeStories: any[] = (await sequelize.query('CALL GetViewCountOfStory(:startDateTime,:endDateTime,:storyId)', {
             replacements: {
                 startDateTime: '1970-01-01 00:00:00',
-                endDateTime: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
+                endDateTime: moment(getMillisecondsToRoundedTime()).format('YYYY-MM-DD HH:mm:ss'),
                 storyId: null
             }
         })).slice(0, 3)
