@@ -20,7 +20,7 @@ export class ViewDetailService {
         })
 
         if (mostRecentViewDetail.length > 0) {
-            if (Date.now() - mostRecentViewDetail[0].dataValues.createdAt.getTime() > 4 * 60 * 1000) {
+            if (Date.now() - mostRecentViewDetail[0].dataValues.createdAt.getTime() > 2 * 60 * 1000) {
                 await Models.viewDetail.create(viewDetailData)
                 return true
             } else {

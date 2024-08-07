@@ -132,9 +132,10 @@ export class StoryService {
         }
 
         // Tính tỉ lệ trung bình lượt xem tại mỗi thời điểm
-        const result: Array<{ storyId: number, data: number[] }> = []
+        const result: Array<{ storyId: number, title?: string, status?: number, data: number[] }> = []
         let rowIndex = 0
         for (let dataRow of data) {
+            const storyInfo = await Models.story.findByPk(dataRow.storyId)
             const _data = dataRow.data.map((viewCount, index) => {
                 if (rowIndex != 2) {
                     return Math.ceil(viewCount * 100 / (data[0].data[index] + data[1].data[index] + data[2].data[index]))
@@ -144,6 +145,8 @@ export class StoryService {
             })
             result.push({
                 storyId: dataRow.storyId,
+                title: storyInfo?.dataValues.title,
+                status: storyInfo?.dataValues.status,
                 data: _data
             })
             ++rowIndex
