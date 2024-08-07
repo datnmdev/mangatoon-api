@@ -1,11 +1,13 @@
 import { plainToClass } from 'class-transformer'
 import { Op, Sequelize } from 'sequelize'
 
-import { Models } from '../../database/mysql.config'
+import { Models, sequelize } from '../../database/mysql.config'
 import { CreateStoryRequestDTO } from './dtos/createStoryRequest.dto'
 import { UpdateStoryRequestBodyDTO } from './dtos/updateStoryRequest.dto'
 import { GetStoriesRequestDTO } from './dtos/getStoriesRequest.dto'
 import { SearchStoryRequestDTO } from './dtos/searchStoriesRequest.dto'
+import { GetTopChartDataReqDTO } from './dtos/getTopChartDataReq.dto'
+import moment from 'moment'
 
 export class StoryService {
 
@@ -95,6 +97,59 @@ export class StoryService {
             offset: (queries.page - 1) * queries.limit,
             limit: queries.limit
         })
+    }
+
+    static getTopChartData = async (queries: GetTopChartDataReqDTO) => {
+        // Lấy top 3 bộ truyện có lượt xem cao nhất hiện tại
+        const topThreeStories: any[] = (await sequelize.query('CALL GetViewCountOfStory(:startDateTime,:endDateTime,:storyId)', {
+            replacements: {
+                startDateTime: '1970-01-01 00:00:00',
+                endDateTime: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
+                storyId: null
+            }
+        })).slice(0, 3)
+
+        // Tính tổng lượt xem tại mõi thời điểm
+        const data: Array<{ storyId: number, data: number[] }> = []
+        for (let story of topThreeStories) {
+            let from = queries.from
+            const viewArr = []
+            while (from <= queries.to) {
+                const viewCount: any = (await sequelize.query('CALL GetViewCountOfStory(:startDateTime,:endDateTime,:storyId)', {
+                    replacements: {
+                        startDateTime: from === queries.from ? '1970-01-01 00:00:00' : moment(from - queries.step).format('YYYY-MM-DD HH:mm:ss'),
+                        endDateTime: moment(from).format('YYYY-MM-DD HH:mm:ss'),
+                        storyId: story.storyId
+                    }
+                }))[0]
+                viewArr.push(viewCount.count)
+                from += queries.step
+            }
+            data.push({
+                storyId: story.storyId,
+                data: viewArr
+            })
+        }
+
+        // Tính tỉ lệ trung bình lượt xem tại mỗi thời điểm
+        const result: Array<{ storyId: number, data: number[] }> = []
+        let rowIndex = 0
+        for (let dataRow of data) {
+            const _data = dataRow.data.map((viewCount, index) => {
+                if (rowIndex != 2) {
+                    return Math.ceil(viewCount * 100 / (data[0].data[index] + data[1].data[index] + data[2].data[index]))
+                } else {
+                    return 100 - result[0].data[index] - result[1].data[index]
+                }
+            })
+            result.push({
+                storyId: dataRow.storyId,
+                data: _data
+            })
+            ++rowIndex
+        }
+
+        return result
     }
 
 }

@@ -10,6 +10,7 @@ import { UpdateStoryRequestBodyDTO, UpdateStoryRequestParamDTO } from './dtos/up
 import { GetStoriesRequestDTO } from './dtos/getStoriesRequest.dto'
 import { SearchStoryRequestDTO } from './dtos/searchStoriesRequest.dto'
 import TransformGroup from './dtos/transform.group'
+import { GetTopChartDataReqDTO } from './dtos/getTopChartDataReq.dto'
 
 export class StoryValidation {
 
@@ -71,6 +72,16 @@ export class StoryValidation {
         try {
             const searchStoryRequestData = plainToClass(SearchStoryRequestDTO, req.query)
             await validateOrReject(searchStoryRequestData)
+            return next()
+        } catch (error) {
+            return next(Errors.BadRequest)
+        }
+    }
+
+    static getTopChartData = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const getTopChartDataRequestData = plainToClass(GetTopChartDataReqDTO, req.query)
+            await validateOrReject(getTopChartDataRequestData)
             return next()
         } catch (error) {
             return next(Errors.BadRequest)

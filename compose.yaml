@@ -22,8 +22,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    # volumes:
-    #   - ./story-api/src:/story-api/src
+    volumes:
+      - ./story-api/src:/story-api/src
     depends_on:
       - story-db
       - story-redis

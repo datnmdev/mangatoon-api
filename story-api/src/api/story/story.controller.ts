@@ -13,6 +13,7 @@ import { GetStoriesRequestDTO } from './dtos/getStoriesRequest.dto'
 import { SearchStoryRequestDTO } from './dtos/searchStoriesRequest.dto'
 import TransformGroup from './dtos/transform.group'
 import axios from '../../../tests/helpers/axios'
+import { GetTopChartDataReqDTO } from './dtos/getTopChartDataReq.dto'
 
 export class StoryController {
     static createStory = async (req: Request, res: Response, next: NextFunction) => {
@@ -178,6 +179,18 @@ export class StoryController {
             res.setHeader('Content-Type', response.headers['content-type'])
             return response.data.pipe(res)
         } catch (error) {
+            return next(error)
+        }
+    }
+
+    static getTopChartData = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const getTopChartDataReqData = plainToClass(GetTopChartDataReqDTO, req.query)
+            const chartData = await StoryService.getTopChartData(getTopChartDataReqData)
+            return res.send(new AppResponse(chartData, null))
+        } catch (error) {
+            console.log(error);
+            
             return next(error)
         }
     }
