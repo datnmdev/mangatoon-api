@@ -12,6 +12,5 @@ StoryRouter.post('/', JwtMiddleware.authentication, StoryAuthorization.createSto
 StoryRouter.post('/:id', JwtMiddleware.authentication, StoryAuthorization.updateStory, uploader().single('coverImage'), StoryValidation.updateStory, StoryController.updateStory)
 StoryRouter.get('/', StoryValidation.getStories, StoryController.getStories)
 StoryRouter.get('/search', StoryValidation.searchStories, StoryController.searchStories)
-StoryRouter.post('/image/blob', StoryController.getImage)
 StoryRouter.get('/chart', StoryValidation.getTopChartData, StoryController.getTopChartData)
 new Date()

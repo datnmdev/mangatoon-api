@@ -12,8 +12,8 @@ import { StoryDTO } from './dtos/story.dto'
 import { GetStoriesRequestDTO } from './dtos/getStoriesRequest.dto'
 import { SearchStoryRequestDTO } from './dtos/searchStoriesRequest.dto'
 import TransformGroup from './dtos/transform.group'
-import axios from '../../../tests/helpers/axios'
 import { GetTopChartDataReqDTO } from './dtos/getTopChartDataReq.dto'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
 
 export class StoryController {
     static createStory = async (req: Request, res: Response, next: NextFunction) => {
@@ -144,40 +144,23 @@ export class StoryController {
             const stories = await StoryService.searchStories(searchStoryRequestData)
             const rows = []
             for (let row of stories.rows) {
-                if (row.dataValues.coverImageUrl.startsWith('http')) {
-                    rows.push(row.dataValues)
-                } else {
-                    rows.push({
-                        ...row.dataValues,
-                        coverImageUrl: (await getStorage().bucket().file(row.dataValues.coverImageUrl).getSignedUrl({
-                            action: 'read',
-                            expires: Date.now() + 5 * 60 * 1000
-                        }))[0]
+                rows.push({
+                    ...row.dataValues,
+                    coverImageUrl: generateSignedUrl({
+                        url: row.dataValues.coverImageUrl.startsWith('http')
+                            ? row.dataValues.coverImageUrl
+                            : (await getStorage().bucket().file(row.dataValues.coverImageUrl).getSignedUrl({
+                                action: 'read',
+                                expires: Date.now() + 5 * 60 * 1000
+                            }))[0],
+                        expireAt: Date.now() + 5 * 60 * 1000
                     })
-                }
+                })
             }
             return res.send(new AppResponse({
                 count: stories.count,
                 rows
             }, null))
-        } catch (error) {
-            return next(error)
-        }
-    }
-
-    static getImage = async (req: Request, res: Response, next: NextFunction) => {
-        try {
-            const response = await axios({
-                url: req.body.url,
-                method: 'get',
-                headers: {
-                    Referer: 'https://truyenqqviet.com/'
-                },
-                responseType: 'stream'
-            })
-
-            res.setHeader('Content-Type', response.headers['content-type'])
-            return response.data.pipe(res)
         } catch (error) {
             return next(error)
         }
@@ -189,8 +172,8 @@ export class StoryController {
             const chartData = await StoryService.getTopChartData(getTopChartDataReqData)
             return res.send(new AppResponse(chartData, null))
         } catch (error) {
-            console.log(error);
-            
+            console.log(error)
+
             return next(error)
         }
     }
