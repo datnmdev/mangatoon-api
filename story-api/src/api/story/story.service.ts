@@ -8,6 +8,8 @@ import { GetStoriesRequestDTO } from './dtos/getStoriesRequest.dto'
 import { SearchStoryRequestDTO } from './dtos/searchStoriesRequest.dto'
 import { GetTopChartDataReqDTO } from './dtos/getTopChartDataReq.dto'
 import moment from 'moment'
+import { generateSignedUrl } from '../../helpers/signingUrl.helper'
+import { getStorage } from 'firebase-admin/storage'
 
 export class StoryService {
 
@@ -132,7 +134,7 @@ export class StoryService {
         }
 
         // Tính tỉ lệ trung bình lượt xem tại mỗi thời điểm
-        const result: Array<{ storyId: number, title?: string, status?: number, data: number[] }> = []
+        const result: Array<{ storyId: number, title?: string, status?: number, coverImageUrl?: string, data: number[] }> = []
         let rowIndex = 0
         for (let dataRow of data) {
             const storyInfo = await Models.story.findByPk(dataRow.storyId)
@@ -143,10 +145,20 @@ export class StoryService {
                     return 100 - result[0].data[index] - result[1].data[index]
                 }
             })
+
             result.push({
                 storyId: dataRow.storyId,
-                title: storyInfo?.dataValues.title,
-                status: storyInfo?.dataValues.status,
+                title: storyInfo!.dataValues.title,
+                status: storyInfo!.dataValues.status,
+                coverImageUrl: generateSignedUrl({
+                    url: storyInfo!.dataValues.coverImageUrl.startsWith('http')
+                        ? storyInfo!.dataValues.coverImageUrl
+                        : (await getStorage().bucket().file(storyInfo!.dataValues.coverImageUrl).getSignedUrl({
+                            action: 'read',
+                            expires: Date.now() + 5 * 60 * 1000
+                        }))[0],
+                    expireAt: Date.now() + 5 * 60 * 1000
+                }),
                 data: _data
             })
             ++rowIndex
