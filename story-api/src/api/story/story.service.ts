@@ -125,7 +125,7 @@ export class StoryService {
                         storyId: story.storyId
                     }
                 }))[0]
-                viewArr.push(viewCount.count)
+                viewArr.push(viewCount !== undefined ? viewCount.count : 0)
                 from += queries.step
             }
             data.push({
