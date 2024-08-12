@@ -14,6 +14,7 @@ MANGATOON API is a project within the Mangatoon initiative, launched in May 2024
 - Jenkins CI/CD
 ## Related
 - MANGATOON UI - FRONTEND: https://github.com/datptithcm/mangatoon-ui
+- Detailed documentation of the entire project: https://drive.google.com/file/d/1W2GQng27083LFq0OvVY2PcyJY2feRsnn/view?usp=sharing
 ## Technology Application Model
 ![image](https://github.com/user-attachments/assets/96d40578-6e9d-4263-878f-ff83ee2b8f17)
 - The system is implemented with a microservice architecture, divided into three services with distinct responsibilities:
