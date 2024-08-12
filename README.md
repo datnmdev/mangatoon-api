@@ -65,6 +65,6 @@ MANGATOON API is a project within the Mangatoon initiative, launched in May 2024
 #### Class diagram of the user service
 ![image](https://github.com/user-attachments/assets/408140d7-456f-47fa-81cc-5c1807a52b14)
 #### Class diagram of the story service
-![image](https://github.com/user-attachments/assets/3de2539f-fd1d-4ae3-a6b1-2e18b83951f7)
+![image](https://github.com/user-attachments/assets/940ce06f-5fac-4c28-9a3b-9a4ef222a144)
 #### Class diagram of the comment service
 ![image](https://github.com/user-attachments/assets/868c4bb8-aca4-419b-ab0f-c59dfcc6380f)
