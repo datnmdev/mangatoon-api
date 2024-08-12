@@ -34,27 +34,31 @@ MANGATOON API is a project within the Mangatoon initiative, launched in May 2024
 #### Entity-Relationship Diagram of Comment Service
 ![image](https://github.com/user-attachments/assets/27f7fffa-7f35-4468-9617-e5c06b4d8ded)
 ### Detailed Entity Design
-- Chú thích về các kí hiệu trên các thuộc tính của thực thể: 
-  - Thuộc tính chỉ bị gạch chân: Khoá chính
-  - Thuộc tính in nghiêng: Khoá tương đương
-  - Thuộc tính in đậm: Khoá ngoại ➢ Thuộc tính vừa bị gạch chân, vừa in đậm: Vừa là khoá ngoại, vừa là khoá chính.
-  - Thuộc tính vừa in nghiêng, vừa in đậm: Vừa là khoá ngoại, vừa là khoá tương đương.
 #### Entity details of the user service
-− ACCOUNT(ID, STATUS, ROLE, CREATED_AT, PROVIDER, USER_ID) − USER(ID, NAME, GENDER, DOB, AVATAR_URL)
-− EMAIL_CREDENTIAL(ID, EMAIL, PASSWORD)
-− FACEBOOK_CREDENTIAL(ID, UID) − GOOGLE_CREDENTIAL(ID, UID)
+- ACCOUNT(ID, STATUS, ROLE, CREATED_AT, PROVIDER, USER_ID)
+− USER(ID, NAME, GENDER, DOB, AVATAR_URL)
+- EMAIL_CREDENTIAL(ID, EMAIL, PASSWORD)
+- FACEBOOK_CREDENTIAL(ID, UID)
+- GOOGLE_CREDENTIAL(ID, UID)
 #### Entity details of the story service
-− USER(ID) − STORY(ID, TITLE, DESCRIPTION, COVER_IMAGE_URL, STATUS, 
-CREATED_AT, UPDATED_AT, COUNTRY_ID)
+− USER(ID) 
+− STORY(ID, TITLE, DESCRIPTION, COVER_IMAGE_URL, STATUS, CREATED_AT, UPDATED_AT, COUNTRY_ID)
 − ALIAS(ID, TITLE, STORY_ID)
-− GENRE(ID, NAME, DESCRIPTION) − STORY_GENRE(STORY_ID, GENRE_ID) − AUTHOR(ID, NAME) − STORY_AUTHOR(STORY_ID, AUTHOR_ID) − STORY_FOLLOW(STORY_ID, USER_ID) − RATING(STORY_ID, USER_ID, STAR) − COUNTRY(ID, NAME) − CHAPTER(ID, ORDER, NAME, STATUS, CREATED_AT, UPDATED_AT, 
-STORY_ID)
+− GENRE(ID, NAME, DESCRIPTION) 
+− STORY_GENRE(STORY_ID, GENRE_ID) 
+− AUTHOR(ID, NAME) 
+− STORY_AUTHOR(STORY_ID, AUTHOR_ID) 
+− STORY_FOLLOW(STORY_ID, USER_ID) 
+− RATING(STORY_ID, USER_ID, STAR) 
+− COUNTRY(ID, NAME) 
+− CHAPTER(ID, ORDER, NAME, STATUS, CREATED_AT, UPDATED_AT, STORY_ID)
 − CHAPTER_DETAIL(ID, ORDER, PATH, CHAPTER_ID)
 − VIEW(ID, CREATED_AT, CLIENT_ID, CHAPTER_ID)
 − HISTORY(ID, CREATED_AT, CHAPTER_ID, USER_ID)
 #### Entity details of the comment service
-− USER(ID) − CHAPTER(ID, STORY_ID) − COMMENT(ID, CONTENT, STATUS, PARENT_ID, CREATED_AT, 
-UPDATED_AT, STORY_ID, CHAPTER_ID, USER_ID)
+− USER(ID) 
+− CHAPTER(ID, STORY_ID) 
+− COMMENT(ID, CONTENT, STATUS, PARENT_ID, CREATED_AT, UPDATED_AT, STORY_ID, CHAPTER_ID, USER_ID)
 − COMMENT_INTERACTION(COMMENT_ID, USER_ID, INTERACTION_TYPE)
 ### Class Diagram Design
 #### Class diagram of the user service
