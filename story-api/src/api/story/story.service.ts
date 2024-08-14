@@ -140,10 +140,11 @@ export class StoryService {
         for (let dataRow of data) {
             const storyInfo = await Models.story.findByPk(dataRow.storyId)
             const _data = dataRow.data.map((viewCount, index) => {
+                const sum = data[0].data[index] + data[1].data[index] + data[2].data[index]
                 if (rowIndex != 2) {
-                    return Math.ceil(viewCount * 100 / (data[0].data[index] + data[1].data[index] + data[2].data[index]))
+                    return sum != 0 ? Math.ceil(viewCount * 100 / sum) : 0
                 } else {
-                    return 100 - result[0].data[index] - result[1].data[index]
+                    return sum != 0 ? 100 - result[0].data[index] - result[1].data[index] : 0
                 }
             })
 
